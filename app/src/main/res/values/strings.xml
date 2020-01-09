@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ministock</string>
+
+    <!-- Side Menu -->
+    <string name="about">เกี่ยวกับเรา</string>
+    <string name="service">บริการ</string>
+    <string name="setting">ตั้งค่า</string>
+    <string name="signout">ออกจากระบบ</string>
+
+    <!-- Tab Menu -->
+    <string name="nav_home">หน้าหลัก</string>
+    <string name="nav_product">สินค้า</string>
+    <string name="nav_report">รายงาน</string>
+    <string name="nav_notification">แจ้งเตือน</string>
+    <string name="nav_account">ฉัน</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
