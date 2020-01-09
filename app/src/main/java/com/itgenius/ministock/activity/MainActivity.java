@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -94,24 +95,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
-        // Logout
-        Button btnLogout = findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // Clear SharedPreference
-                pref = getSharedPreferences("pref_login", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.remove("pref_userid");
-                editor.commit();
-
-                // กลับไปหน้า Login
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     // -------------------------------------------------------------------------------------------------------
@@ -190,6 +173,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
 
+        // About us
+        if(id==R.id.side_about){
+
+            // ปิดเมนูด้านข้าง
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+            // เปิดหน้า About
+            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(intent);
+        }
+
+        // Logout
         if(id == R.id.side_signout){
 
             // Logout ออกจากระบบ

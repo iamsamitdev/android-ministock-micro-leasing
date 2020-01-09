@@ -27,6 +27,9 @@ dependencies {
     // Design Library
     implementation 'com.google.android.material:material:1.0.0'
 
+    // Circle Image View
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
     // Zxing Scan Barcode/QR Code
     implementation 'me.dm7.barcodescanner:zxing:1.9'
 
